@@ -3,7 +3,6 @@
 # Trap Ctrl+C
 trap "echo -e '\n\e[1;31mAborted by user. Exiting...\e[0m'; exit" SIGINT
 
-# Function to check and install dependencies
 function check_dependencies() {
     local deps=("nmap" "figlet")
     for dep in "${deps[@]}"; do
@@ -21,7 +20,7 @@ function check_dependencies() {
     done
 }
 
-# Function to display animated header
+
 function show_header() {
     clear
     echo -ne "\e[1;34mInitializing ShadowProbe Scan"
@@ -59,10 +58,10 @@ function show_header() {
     done
 }
 
-# Run dependency check
+
 check_dependencies
 
-# Main Loop
+
 while true; do
     show_header
 
@@ -98,7 +97,7 @@ options=(
     "\e[1;34m28. Exit\e[0m"
 )
 
-# To print the options:
+
 for opt in "${options[@]}"; do
     echo -e "$opt"
 done
